@@ -54,18 +54,18 @@
       assign account_actions_style = ''
       if display_style == 'text' and section
         assign actions_font = section.settings.actions_font | default: 'body'
-        assign font_obj = settings.type_heading_font
+        assign font_family = "'Afacad', sans-serif"
+        assign font_weight = '400'
         case actions_font
-          when 'body'
-            assign font_obj = settings.type_body_font
           when 'subheading'
-            assign font_obj = settings.type_subheading_font
+            assign font_weight = '500'
+          when 'heading'
+            assign font_family = "'Roboto Serif', serif"
+            assign font_weight = '500'
           when 'accent'
-            assign font_obj = settings.type_accent_font
+            assign font_family = "'Covered By Your Grace', cursive"
         endcase
-        assign font_family = font_obj.family | append: ', ' | append: font_obj.fallback_families
-        assign font_family_safe = font_family | replace: '"', "'"
-        assign account_actions_style = '--header-actions-font-family: ' | append: font_family_safe | append: '; --header-actions-font-weight: ' | append: font_obj.weight | append: ';'
+        assign account_actions_style = '--header-actions-font-family: ' | append: font_family | append: '; --header-actions-font-weight: ' | append: font_weight | append: ';'
       endif
     %}
     <div

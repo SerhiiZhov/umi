@@ -1,42 +1,44 @@
-{% # theme-check-disable %}
-{%- unless settings.type_body_font.system? -%}
-  <link
-    rel="preload"
-    as="font"
-    href="{{ settings.type_body_font | font_url }}"
-    type="font/woff2"
-    crossorigin
-    fetchpriority="low"
-  >
-{%- endunless -%}
-{%- unless settings.type_subheading_font.system? -%}
-  <link
-    rel="preload"
-    as="font"
-    href="{{ settings.type_subheading_font | font_url }}"
-    type="font/woff2"
-    crossorigin
-    fetchpriority="low"
-  >
-{%- endunless -%}
-{%- unless settings.type_heading_font.system? -%}
-  <link
-    rel="preload"
-    as="font"
-    href="{{ settings.type_heading_font | font_url }}"
-    type="font/woff2"
-    crossorigin
-    fetchpriority="low"
-  >
-{%- endunless -%}
-{%- unless settings.type_accent_font.system? -%}
-  <link
-    rel="preload"
-    as="font"
-    href="{{ settings.type_accent_font | font_url }}"
-    type="font/woff2"
-    crossorigin
-    fetchpriority="low"
-  >
-{%- endunless -%}
-{% # theme-check-enable %}
+{% style %}
+  @font-face {
+    font-family: 'Afacad';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url({{ 'Afacad-Regular.woff2' | asset_url }}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Afacad';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url({{ 'Afacad-Medium.woff2' | asset_url }}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Afacad';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url({{ 'Afacad-Bold.woff2' | asset_url }}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Covered By Your Grace';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url({{ 'CoveredByYourGrace-Regular.woff2' | asset_url }}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Roboto Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url({{ 'RobotoSerif-Regular.woff2' | asset_url }}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Roboto Serif';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url({{ 'RobotoSerif-Medium.woff2' | asset_url }}) format('woff2');
+  }
+{% endstyle %}
