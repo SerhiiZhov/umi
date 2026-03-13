@@ -2,7 +2,11 @@
   "sections": {
     "hero": {
       "type": "umi-hero",
-      "settings": {}
+      "settings": {
+        "image_1": "shopify://shop_images/hero_desc_left.webp",
+        "image_2": "shopify://shop_images/hero_desc_right.webp",
+        "logo": "shopify://shop_images/logo.webp"
+      }
     }
   },
   "order": ["hero"]

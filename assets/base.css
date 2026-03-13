@@ -380,8 +380,30 @@ p:empty {
 }
 
 /* Layout */
+
+.custom-section {
+  margin: 30px 0;
+}
+
 .content-for-layout {
   flex: 1;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+
+  .custom-section {
+    margin: 60px 0;
+  }
 }
 
 /* Set up page widths & margins */

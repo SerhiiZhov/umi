@@ -1,14 +1,103 @@
 {{ 'umi-hero.css' | asset_url | stylesheet_tag }}
 
-123
+<div class="container">
+  <div class="umi-hero__content">
+    <div class="umi-hero__title_group">
+      {% if section.settings.subtitle != blank %}
+        <p class="umi-hero__content_text">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h1 class="umi-hero__content_title">
+          {{ section.settings.title }}
+        </h1>
+      {% endif %}
+    </div>
+    <div class="umi-hero__description_wrapper">
+      <div class="umi-hero__images_wrapper">
+
+        <div class="umi-hero__image_items_wrapper">
+          {% if section.settings.logo != blank %}
+            <div class="umi-hero__logo_wrapper">
+              <img
+                src="{{ section.settings.logo | img_url: "master" }}"
+                alt="{{ section.settings.logo.alt }}"
+                width="{{ section.settings.logo.width }}"
+                height="{{ section.settings.logo.height }}">
+
+            </div>
+          {% endif %}
+          <div class="umi-hero__image_item">
+            <img
+              src="{{ section.settings.image_1 | img_url: "master" }}"
+              alt="{{ section.settings.image_1.alt }}"
+              width="{{ section.settings.image_1.width }}"
+              height="{{ section.settings.image_1.height }}">
+          </div>
+          <div class="umi-hero__image_item">
+            <img
+              src="{{ section.settings.image_2 | img_url: "master" }}"
+              alt="{{ section.settings.image_2.alt }}"
+              width="{{ section.settings.image_2.width }}"
+              height="{{ section.settings.image_2.height }}">
+          </div>
+        </div>
+        {% if section.settings.logo_text != blank %}
+          <p class="umi-hero__logo_text">{{ section.settings.logo_text }}</p>
+        {% endif %}
+      </div>
+      <div class="description_content">
+        <p class="description_content_text">
+          123
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% schema %}
-{
+  {
     "name": "UMI Hero",
     "tag": "section",
-    "class": "umi-hero-section",
+    "class": "custom-section umi-hero-section",
     "settings": [
-        
-        ]
-}
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Greens Often Feel Heavy After 45."
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "These Are Designed Differently"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image 2"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      }, {
+        "type": "text",
+        "id": "logo_text",
+        "label": "Logo Text",
+        "default": "Designed specifically for women navigating metabolic changes after 45"
+      }
+    ],
+    "presets": [
+      {
+        "name": "UMI Hero"
+      }
+    ]
+  }
 {% endschema %}
