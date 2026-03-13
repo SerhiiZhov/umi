@@ -1,0 +1,67 @@
+{{ 'marquee-bar.css' | asset_url | stylesheet_tag }}
+{{ 'marquee-item.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .marquee {
+    animation: {{ section.settings.scroll_speed }}s scroll linear infinite;
+  }
+
+  .marquee-bar-section{
+    background-color: {{ section.settings.background_color }};
+  }
+</style>
+
+<div class="marquee-bar__container">
+  <div class="items marquee">
+    <div class="item__wrapper">
+      {% render 'custom-marquee-cycle' %}
+    </div>
+  </div>
+  <div aria-hidden="true" class="items marquee">
+    <div class="item__wrapper">
+      {% render 'custom-marquee-cycle' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "marquee-bar",
+    "tag": "section",
+    "class": "marquee-bar-section",
+    "settings": [
+      {
+        "type": "range",
+        "id": "scroll_speed",
+        "label": "Scroll Speed",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "type":"color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#E9FF99"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "item_text",
+            "label": "Item Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

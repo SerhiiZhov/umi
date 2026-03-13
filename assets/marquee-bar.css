@@ -1,0 +1,28 @@
+.marquee-bar-section {
+    padding: 8px 0;
+}
+
+.marquee-bar__container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.item__wrapper {
+    display: flex;
+    align-items: start;
+}
+
+
+
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

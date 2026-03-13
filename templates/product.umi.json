@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "hero": {
+      "type": "umi-hero",
+      "settings": {}
+    }
+  },
+  "order": ["hero"]
+}

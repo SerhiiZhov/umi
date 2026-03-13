@@ -12,37 +12,36 @@
   "name": "Header",
   "sections": {
     "header_announcements_9jGBFp": {
-      "type": "header-announcements",
+      "type": "custom-marquee-bar",
+      "settings": {},
       "blocks": {
-        "announcement_BxgCk9": {
-          "type": "_announcement",
+        "item_1": {
+          "type": "item",
           "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "0.75rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
+            "item_text": "Precision enzyme complex",
+            "icon": "pillow_icon"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "item_text": "Traditional botanical extracts",
+            "icon": "grow_icon"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "item_text": "Transparent dosing",
+            "icon": "rocket_icon"
+          }
         }
       },
-      "block_order": [
-        "announcement_BxgCk9"
-      ],
-      "name": "t:names.announcement_bar",
-      "settings": {
-        "speed": 5,
-        "section_width": "page-width",
-        "color_scheme": "scheme-1",
-        "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
-      }
+      "block_order": ["item_1", "item_2", "item_3"]
     },
     "header_section": {
       "type": "header",
+      "disabled": true,
       "blocks": {
         "header-logo": {
           "type": "_header-logo",
@@ -111,8 +110,5 @@
       }
     }
   },
-  "order": [
-    "header_announcements_9jGBFp",
-    "header_section"
-  ]
+  "order": ["header_announcements_9jGBFp", "header_section"]
 }

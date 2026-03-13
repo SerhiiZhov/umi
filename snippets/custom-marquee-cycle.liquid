@@ -1,0 +1,24 @@
+{% if section.blocks.size < 6 %}
+  {% for item in section.blocks %}
+    {% render 'custom-marque-item'
+      , icon_id: item.settings.icon
+      , text: item.settings.item_text
+      ,
+ class_name: 'marquee__item--horizontal' %}
+  {% endfor %}
+  {% for item in section.blocks %}
+    {% render 'custom-marque-item'
+      , icon_id: item.settings.icon
+      , text: item.settings.item_text
+      ,
+ class_name: 'marquee__item--horizontal' %}
+  {% endfor %}
+{% else %}
+  {% for item in section.blocks %}
+    {% render 'custom-marque-item'
+      , icon_id: item.settings.icon
+      , text: item.settings.item_text
+      ,
+ class_name: 'marquee__item--horizontal' %}
+  {% endfor %}
+{% endif %}
